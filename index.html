@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 ball</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const points = [
+    "det er klart",
+    "Nei det kan du ikke gjøre",
+    "Ja",
+    "ofc",
+    "hvorfor skal du det?",
+    "Det burde du ikke vite",
+    "Det må du spørre mammaen din om!",
+    "Det burde tenkes over",
+    ];
+    document.getElementById("answer").innerHTML=points;
+    
+    function minFunksjon(){
+        points.sort(function(a,b){return 0.5 - Math.random()})
+        document.getElementById("answer").innerHTML=points[0];
+        document.getElementById("answer").style.fontSize="26px";
+    }
+    
+    </script>
+    
+    
+
+</head>
+<body>
+    <div class="ball">
+        <div class="whiteSurface">
+            <p id="answer">8</p>
+        </div>
+    </div>
+    <div class="inputField">
+        <input type="text" id="clear" placeholder="Spør meg om alt!">
+        <button id="askMe" onclick="minFunksjon()">Enter</button>
+
+</body>
+</html>
